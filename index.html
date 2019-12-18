@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    a {
+      outline: none;
+      display: inline-block;
+      background-color: aqua;
+      width: 80px;
+      height: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <nav v-bin:class="class1" v-on:click.prevent>
+      <a href="#" class="img1" v-on:click="makeActive('img/1.png')">img1</a>
+      <a href="#" class="img2" v-on:click="makeActive('img/2.png')">img2</a>
+      <a href="#" class="img3" v-on:click="makeActive('img/3.png')">img3</a>
+
+    </nav>
+    {{img}}
+    <img v-bind:src="img" alt="">
+
+  </div>
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var demon = new Vue({
+    el: '.main',
+    data: {
+      img: 'img/1.png'
+    },
+    methods: {
+      makeActive: function (item) {
+        this.img = item;
+      }
+    },
+
+
+  })
+</script>
+
+</html>
